@@ -3,6 +3,10 @@ node_modules/
 dist/
 web-build/
 *.log
+
+# Documento de entrega e PDF: apenas na maquina local, fora do repositorio
+docs/
+*.pdf
 .DS_Store
 .env
 *.orig.*
