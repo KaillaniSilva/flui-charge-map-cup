@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "Flui",
+    "slug": "flui-charge-map-cup",
+    "version": "2.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "scheme": "flui",
+    "splash": {
+      "backgroundColor": "#052E23",
+      "resizeMode": "contain"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.flui.chargemapcup",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "O Flui usa sua localizacao para mostrar pontos de recarga proximos."
+      }
+    },
+    "android": {
+      "package": "com.flui.chargemapcup",
+      "adaptiveIcon": {
+        "backgroundColor": "#052E23"
+      },
+      "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION"],
+      "config": {
+        "googleMaps": {
+          "apiKey": "COLOQUE_SUA_GOOGLE_MAPS_API_KEY_AQUI"
+        }
+      }
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}

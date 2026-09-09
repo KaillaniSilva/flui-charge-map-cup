@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Flui — Charge Map Cup — Entrega (Etapas 1 e 2)</title>
+<style>
+  :root{
+    --volt:#0BA87A; --forest:#052E23; --charge:#0EA5E9;
+    --ink:#0d1b16; --muted:#5a6b63; --line:#d7e2db; --bg:#ffffff; --soft:#f2f7f4;
+  }
+  *{box-sizing:border-box}
+  html{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.55}
+  body{margin:0;background:var(--soft)}
+  .page{max-width:820px;margin:0 auto;background:var(--bg);padding:56px 60px}
+  h1{font-size:26px;margin:0 0 4px;letter-spacing:-.5px}
+  h2{font-size:19px;margin:34px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--volt);letter-spacing:-.3px}
+  h3{font-size:15px;margin:20px 0 6px;color:var(--forest)}
+  p,li{font-size:13.5px}
+  .sub{color:var(--muted);font-size:14px;margin:0 0 2px}
+  .cover{border-left:5px solid var(--volt);padding:14px 18px;background:var(--soft);border-radius:0 10px 10px 0;margin:18px 0 8px}
+  table{border-collapse:collapse;width:100%;margin:10px 0;font-size:12.5px}
+  th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+  th{background:var(--forest);color:#fff;font-weight:600}
+  tr:nth-child(even) td{background:#f7faf8}
+  code{background:#eef3f0;padding:1px 5px;border-radius:4px;font-size:12px}
+  pre{background:#0f231c;color:#d7f0e6;padding:12px 14px;border-radius:8px;overflow:auto;font-size:12px}
+  .pill{display:inline-block;background:var(--volt);color:#04140f;font-weight:700;font-size:11px;padding:2px 9px;border-radius:999px;vertical-align:middle}
+  .muted{color:var(--muted)}
+  ul{margin:6px 0;padding-left:20px}
+  .note{font-size:12px;color:var(--muted);border:1px dashed var(--line);padding:8px 12px;border-radius:8px;background:#fbfdfc}
+  @media print{
+    body{background:#fff}
+    .page{padding:0;max-width:none}
+    h2{break-after:avoid}
+    table,pre,.cover{break-inside:avoid}
+    a{color:inherit;text-decoration:none}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <p class="pill">CHARGE MAP CUP · ENTERPRISE CHALLENGE</p>
+  <h1>Flui — App mobile para o motorista de veículo elétrico</h1>
+  <p class="sub">Documento de entrega — Etapas 1 e 2</p>
+
+  <div class="cover">
+    Protótipo desenvolvido <strong>em código</strong> (React Native + Expo), navegável em
+    Android, iOS e Web, publicado em repositório público no GitHub. Todos os dados de
+    pontos de recarga são <strong>simulados</strong>.
+  </div>
+
+  <h2>1. Integrantes do grupo</h2>
+  <p class="note">Preencher com nome completo em <strong>ordem alfabética</strong> e RM. Grupo de 2 a 5 integrantes.</p>
+  <table>
+    <tr><th style="width:40px">#</th><th>Nome completo (ordem alfabética)</th><th style="width:120px">RM</th></tr>
+    <tr><td>1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    <tr><td>2</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    <tr><td>3</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    <tr><td>4</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    <tr><td>5</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+  </table>
+
+  <h2>2. Repositório público</h2>
+  <p><strong>GitHub:</strong> <code>https://github.com/&lt;usuario&gt;/flui-charge-map-cup</code>
+  <span class="muted">(substituir pelo link real após o <code>git push</code>)</span></p>
+  <pre>git add .
+git commit -m "Flui - Charge Map Cup - Etapas 1 e 2"
+git branch -M main
+git remote add origin https://github.com/&lt;usuario&gt;/flui-charge-map-cup.git
+git push -u origin main</pre>
+  <p class="muted">Execução: <code>npm install</code> e <code>npm start</code> (Expo Go no celular, ou tecla <code>w</code> para Web).</p>
+
+  <h2>3. Contextualização</h2>
+  <p>O <strong>Flui</strong> atende o momento anterior à recarga: o motorista precisa decidir
+  <strong>para onde ir</strong>. A informação é organizada em torno de três perguntas:</p>
+  <ul>
+    <li><strong>Onde tem ponto perto de mim?</strong> → tela de <strong>Mapa</strong></li>
+    <li><strong>Esse ponto serve pro meu carro e pro meu tempo?</strong> → <strong>Ficha do ponto</strong></li>
+    <li><strong>Qual ponto combina com o que eu preciso agora?</strong> → <strong>Busca com filtros</strong></li>
+  </ul>
+  <p><strong>Etapa 1:</strong> protótipo navegável, telas principais (mapa, ficha, busca), identidade
+  visual aplicada, navegação funcional, dados simulados.<br/>
+  <strong>Etapa 2:</strong> app funcional — mapa interativo integrável ao Google Maps, ficha rica,
+  <strong>filtros de busca funcionando</strong> e <strong>motion design</strong> em transições, loading e feedbacks.</p>
+
+  <h2>4. Justificativa das tomadas de decisão</h2>
+
+  <h3>4.1 Plataforma: React Native + Expo</h3>
+  <p>Código em vez de Figma para entregar uma base real e evolutiva. Expo roda em Android,
+  iOS e Web com um só código e sem configuração nativa — avaliação por <code>npm install</code> + <code>npm start</code>.</p>
+
+  <h3>4.2 Estrutura e hierarquia da informação</h3>
+  <ul>
+    <li>Navegação por <strong>abas</strong> (Mapa e Buscar) — os dois modos de entrada do motorista; a <strong>Ficha</strong> é profundidade acessível dos dois lados.</li>
+    <li>Na Ficha, ordem pela urgência de decisão: status e números-chave → carregadores/conectores/potência/preço → horários → períodos de menor movimento → comodidades → acessibilidade do local → sobre.</li>
+    <li><strong>Marcadores diferenciados</strong>: cor = status (verde disponível, amarelo ocupado, cinza fora de serviço); ícone de raio preenchido = carga rápida (DC); potência máxima escrita no pino.</li>
+  </ul>
+
+  <h3>4.3 Identidade visual (mobilidade elétrica + sustentabilidade)</h3>
+  <ul>
+    <li><strong>Paleta:</strong> verde “Volt” <code>#12E29A</code> (energia/movimento), verde “Floresta” <code>#052E23</code> (base sólida/natureza), ciano “Charge” <code>#38BDF8</code> (carga rápida/tecnologia). Cores de status próprias. Tema claro e escuro completos.</li>
+    <li><strong>Tipografia:</strong> escala única (display → caption); títulos pesados com tracking negativo (tom técnico e confiante); corpo regular para leitura. Referência: Sora + Inter; no código, fonte de sistema para manter leve e offline.</li>
+    <li><strong>Tom visual:</strong> cantos generosos, sombras suaves, chips arredondados, ícones de linha, muito respiro — leveza (“fluir”) e limpeza, coerente com energia limpa.</li>
+  </ul>
+
+  <h3>4.4 Google Maps com plano B</h3>
+  <p>Integração real implementada em <code>src/components/map/GoogleMapView.native.js</code>
+  (<code>react-native-maps</code>, <code>PROVIDER_GOOGLE</code>, estilo visual do Flui, marcadores por status).
+  Como a chave de API é pessoal e o Google Maps não roda no Expo Web, o app vem por padrão com um
+  <strong>mapa próprio</strong> em SVG (pan/zoom, marcadores animados), controlado pela flag
+  <code>USE_GOOGLE_MAPS</code> em <code>src/config.js</code>. O protótipo abre em qualquer ambiente e a
+  troca é de uma linha.</p>
+
+  <h3>4.5 Filtros funcionais compartilhados</h3>
+  <p>Filtros num <strong>contexto global</strong> (<code>FiltersContext</code>), aplicados pela mesma função
+  (<code>applyFilters</code>) no mapa e na busca: conector, potência mínima, comodidades, horário
+  (com cálculo de “aberto agora”), disponibilidade e texto livre.</p>
+
+  <h3>4.6 Motion design com propósito</h3>
+  <p>As animações comunicam estado: skeleton de carregamento, mola no sheet e no card do ponto,
+  entrada escalonada das listas, pulso no marcador selecionado, parallax no header da ficha,
+  feedback de escala em cada toque. Tudo respeita <strong>“Reduzir movimento”</strong> do sistema.</p>
+
+  <h3>4.7 Solução disruptiva</h3>
+  <ul>
+    <li><strong>Períodos de menor movimento</strong> na ficha: o app sugere <strong>quando</strong> ir para evitar fila.</li>
+    <li><strong>Marcador que já decide</strong>: potência + status no pino reduzem toques.</li>
+    <li><strong>Filtro único para mapa e busca</strong>: o contexto do motorista viaja com ele.</li>
+    <li><strong>Acessibilidade como requisito de produto</strong>, não ajuste final.</li>
+  </ul>
+
+  <h2>5. Recursos de acessibilidade presentes no app</h2>
+  <table>
+    <tr><th>Recurso</th><th>Onde</th><th>Implementação</th></tr>
+    <tr><td>Rótulos para leitor de tela</td><td>Todos os controles</td><td><code>accessibilityLabel/Hint/Role</code> (button, header)</td></tr>
+    <tr><td>Estado anunciado</td><td>Chips de filtro, marcadores</td><td><code>accessibilityState=&#123;&#123; selected &#125;&#125;</code></td></tr>
+    <tr><td>Status sem depender de cor</td><td>Cards, ficha, mapa</td><td><code>StatusDot</code> com texto ao lado da cor; legenda descrita</td></tr>
+    <tr><td>Contraste AA</td><td><code>src/theme/colors.js</code></td><td>Pares texto/fundo ≥ 4.5:1 (claro e escuro)</td></tr>
+    <tr><td>Tema claro/escuro</td><td>App inteiro</td><td><code>useColorScheme()</code> → <code>ThemeProvider</code></td></tr>
+    <tr><td>Escala de fonte do sistema</td><td>Todo texto</td><td><code>allowFontScaling</code>, <code>maxFontSizeMultiplier</code>, layouts flexíveis</td></tr>
+    <tr><td>Reduzir movimento</td><td>Todas as animações</td><td><code>useReduceMotion()</code> (<code>AccessibilityInfo</code> + listener)</td></tr>
+    <tr><td>Alvo de toque ≥ 44×44 pt</td><td>Botões, chips, ícones</td><td>Altura mínima + <code>hitSlop</code></td></tr>
+    <tr><td>Anúncios de contexto</td><td>Mapa e busca</td><td><code>announceForAccessibility</code> com contagem de resultados</td></tr>
+    <tr><td>Conteúdo decorativo oculto</td><td>Skeleton, malha do mapa</td><td><code>accessibilityElementsHidden</code></td></tr>
+    <tr><td>Rótulos das abas</td><td>Navegação</td><td><code>tabBarAccessibilityLabel</code></td></tr>
+    <tr><td>Acessibilidade física do local</td><td>Ficha do ponto</td><td>Campo “Acessibilidade do local” (vaga acessível)</td></tr>
+  </table>
+
+  <h2>6. Requisitos → onde está no projeto</h2>
+  <table>
+    <tr><th>Requisito</th><th>Etapa</th><th>Arquivo(s)</th></tr>
+    <tr><td>Tela de mapa navegável</td><td>1</td><td><code>src/screens/MapScreen.js</code></td></tr>
+    <tr><td>Ficha detalhada do ponto</td><td>1</td><td><code>src/screens/PointDetailScreen.js</code></td></tr>
+    <tr><td>Tela de busca</td><td>1</td><td><code>src/screens/SearchScreen.js</code></td></tr>
+    <tr><td>Identidade visual</td><td>1</td><td><code>src/theme/*</code></td></tr>
+    <tr><td>Navegação entre telas</td><td>1</td><td><code>src/navigation/RootNavigator.js</code></td></tr>
+    <tr><td>Dados simulados</td><td>1</td><td><code>src/data/chargingPoints.js</code></td></tr>
+    <tr><td>Mapa interativo + Google Maps</td><td>2</td><td><code>src/components/map/*</code>, <code>src/config.js</code></td></tr>
+    <tr><td>Marcadores diferenciados</td><td>2</td><td><code>src/components/map/MarkerPin.js</code></td></tr>
+    <tr><td>Ficha: carregadores, conectores, potência, horários, menor movimento, comodidades</td><td>2</td><td><code>PointDetailScreen.js</code>, <code>ConnectorBadge.js</code></td></tr>
+    <tr><td>Filtros funcionando</td><td>2</td><td><code>src/data/filters.js</code>, <code>FiltersContext.js</code>, <code>FilterSheet.js</code></td></tr>
+    <tr><td>Motion design</td><td>2</td><td><code>src/components/*</code> (moti/reanimated), <code>RootNavigator.js</code></td></tr>
+  </table>
+
+  <h2>7. Fora do escopo desta entrega (conforme o desafio)</h2>
+  <ul>
+    <li>Sistema de avaliação funcional (a nota é apenas exibição do dado simulado)</li>
+    <li>Favoritos e histórico</li>
+    <li>Vídeo-pitch</li>
+    <li>Integração real com base de dados / APIs de terceiros</li>
+  </ul>
+
+  <p class="muted" style="margin-top:30px;font-size:11px">Para exportar em PDF: abra este arquivo no navegador e use Imprimir → Salvar como PDF.</p>
+
+</div>
+</body>
+</html>
