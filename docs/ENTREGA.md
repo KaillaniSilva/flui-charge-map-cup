@@ -20,20 +20,17 @@
 
 ## 2. Link do repositório público
 
-**GitHub:** `https://github.com/<usuario>/flui-charge-map-cup`
+**GitHub:** https://github.com/KaillaniSilva/flui-charge-map-cup
 
-> Substituir pelo link real após dar `git push`. O repositório contém todo o
-> código do app (Expo/React Native), este documento e o README com instruções
-> de execução.
+Repositório público contendo todo o código do app (Expo/React Native), este
+documento e o README com instruções de execução.
 
-Passos para publicar:
+Para atualizar após novas mudanças:
 
 ```bash
 git add .
-git commit -m "Flui - Charge Map Cup - Etapas 1 e 2"
-git branch -M main
-git remote add origin https://github.com/<usuario>/flui-charge-map-cup.git
-git push -u origin main
+git commit -m "descricao da mudanca"
+git push
 ```
 
 ---

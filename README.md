@@ -137,3 +137,5 @@ docs/
 O conteúdo exigido no PDF está em [`docs/ENTREGA.md`](docs/ENTREGA.md).
 Para gerar o PDF: abra `docs/entrega.html` no navegador e use
 **Imprimir → Salvar como PDF**, ou rode `npx md-to-pdf docs/ENTREGA.md`.
+
+**Repositório:** https://github.com/KaillaniSilva/flui-charge-map-cup
